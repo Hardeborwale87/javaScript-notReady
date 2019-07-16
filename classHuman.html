@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="bootClass/node_modules/bootstrap/dist/css/bootstrap.css">
+
+	
+	<script type="text/javascript" src="bootClass/node_modules/jquery/dist/jquery.js"></script>
+	<script type="text/javascript" src="bootClass/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-span-5">
+				Male: <input type="radio" name="gender" value="male" id="okunrin"><br>
+
+				Female: <input type="radio" name="gender" value="female" id="obinrin"><br>
+
+				Enter Name: <input type="text" name="name" placeholder="enter name" id="oruko"><br>
+
+				<button type="button" onclick="Build()">Create</button>
+
+				<div id="show"></div>
+			</div>
+		</div>
+	</div>
+<script type="">
+	"use strict";
+		class human {
+			constructor(person){
+				this.legs = 2;
+				this.eyes = 2;
+				this.ears = 2;
+				this.hands = 2;
+				this.nose = 1;
+			}
+		}
+
+		class male extends human{
+			constructor(person){
+				super(person);
+				this.voice = "deep";
+				this.hairType = "short";
+				this.beard = "True";
+			}
+			
+		}
+
+		class female extends human {
+				constructor(person){
+					super(person);
+					this.voice = "Low";
+					this.beard = "False";
+					this.hairType = "Long";
+				}
+			
+		
+		}
+
+
+// var woman = new female;
+
+
+	function Build() {
+			// var man = new male;
+			
+			if (okunrin.checked) {
+				var man = new male;
+		show.innerHTML = "You are a man" + "<br>" + "Name: " + oruko.value + "<br>" + "Voice: " + man.voice + "<br>" + "Number of Eyes: " + man.eyes + "<br>" + "Number of Ears: " + man.ears + "<br>" + "Beard: " + man.beard + "<br>" + "Hair Variation: " + man.hairType + "<br>" + "Legs: " + man.legs + "<br>" + "Hands: " + man.hands;
+			}
+
+			else if(obinrin.checked)	{
+			var woman = new female;
+		show.innerHTML ="You are a woman"  + "<br>" +  "Name: " + oruko.value + "<br>" + "Voice: " + woman.voice + "<br>" + "Number of Eyes: " + woman.eyes + "<br>" + "Number of Ears: " + woman.ears + "<br>" + "Beard: " + woman.beard + "<br>" + "Hair Variation: " + woman.hairType + "<br>" + "Legs: " + woman.legs + "<br>" + "Hands: " + woman.hands;
+			}
+
+			
+	};
+
+
+	// class Game {
+	// 	constructor(){
+	// 		this.speed = "100km/hr";
+	// 		this.color = "red";
+	// 		this.streeing = "square";
+	// 		this.break = "perfect";
+	// 	}
+	// }
+
+	// class newVehicle extends Game {
+	// 	color = "Green";
+	// }
+
+	// class anotherVehicle extends Game {
+	// 	streeing = "circle";
+	// }
+
+	// var display = new newVehicle;
+	// console.log(display.speed, display.color, display.break);
+	// console.log(display.break);
+
+</script>
+</body>
+</html>
